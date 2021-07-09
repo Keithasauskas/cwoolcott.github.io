@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .redColor {
+            background-color: red;
+        }
+
+        .blueColor {
+            background-color: blue;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="carTitle"></h1>
+    <div id="testDiv" style="width:200px; height:200px;" class="redColor">
+        TEST DIV
+    </div>
+
+    <select id="cars">
+        <option>Select a Car...</option>
+        <option value="mazda">Mazda Rx-7</option>
+        <option value="bmw">BMW 850i</option>
+        <option value="toyota">Toyota Camry</option>
+    </select>
+
+    <script>
+        var testDivEl = document.querySelector("#testDiv");
+        var carsEl = document.querySelector("#cars");
+        var carTitleEl = document.querySelector("#carTitle");
+
+        var redIsOn = true;
+
+        function somefunction() {
+            if (redIsOn) {
+                testDivEl.setAttribute("class", "blueColor");
+                redIsOn = false;
+            }
+            else {
+                testDivEl.setAttribute("class", "redColor");
+                redIsOn = true;
+            }
+
+        }
+
+
+        carsEl.addEventListener("change", function () {
+
+            somefunction();
+            testDiv.textContent = carsEl.value;
+            carTitleEl.textContent = carsEl.value;
+
+        })
+
+
+        testDivEl.addEventListener("click", somefunction);
+
+    </script>
+
+</body>
+
+</html>

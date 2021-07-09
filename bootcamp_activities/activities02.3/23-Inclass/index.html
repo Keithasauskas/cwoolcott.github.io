@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        [class*=heading] {
+            color: red
+        }
+
+        [data-name*=name] {
+            color: blue
+        }
+
+        [href$=html]::after {
+            content: " (<-- GO)";
+            font-size: 50%;
+        }
+
+        .grocery li {
+            text-decoration: underline;
+        }
+
+        .grocery li:nth-child(odd) {
+            background-color: grey;
+        }
+
+        .grocery li:nth-child(even) {
+            background-color: #ffb8b8;
+        }
+
+        .grocery li:nth-child(3) {
+            background-color: rgb(4, 0, 255);
+        }
+
+        .container div:last-child {
+            font-size: 36px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="subheadingTwo">TITLE</div>
+        <div class="descript-heading">DESCRIPTION</div>
+        <div class="heading-footer">FOOTER</div>
+        <div data-name="name">Chris</div>
+    </div>
+    <a href="page1.html">GOTO Page 1</a><br>
+    <a href="page2.html">GOTO Page 2</a><br>
+    <a href="page3.php">GOTO Page 3</a><br>
+    <a href="page4.html">GOTO Page 4</a><br>
+    <ul class="grocery">
+        <li>
+            Cheese
+        </li>
+        <li>Milk</li>
+        <li>Apples</li>
+        <li>Sour Cream</li>
+        <li>Soup</li>
+    </ul>
+</body>
+
+</html>

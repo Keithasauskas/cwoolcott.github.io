@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car JSON </title>
+</head>
+
+<body>
+    <script>
+        var carObject = {
+            make: "Mazda",
+            model: "Rx-7",
+            year: 1994
+        };
+
+        var carObject2 = {
+            make: "Toyota",
+            model: "MR-2",
+            year: 1996
+        };
+
+
+        // var sampleString = '{"name":"Chris","favoriteColor":"Red"}';
+        // var sampleObject = JSON.parse(sampleString);
+
+        // console.log(sampleObject.favoriteColor);
+
+
+        var stringifiedcarObject = JSON.stringify(carObject);
+
+        localStorage.setItem('carItem1', stringifiedcarObject);
+
+        var parsedcarObject = JSON.parse(localStorage.getItem('carItem1'));
+
+       // console.log(parsedcarObject.model);
+
+        //console.log("carObject", stringifiedcarObject);
+    </script>
+</body>
+
+</html>

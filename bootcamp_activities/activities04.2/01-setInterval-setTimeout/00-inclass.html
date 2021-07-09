@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple Timer</title>
+</head>
+
+<body>
+    <p id="demo"></p>
+    <script>
+        var demoEl = document.querySelector("#demo");
+        var demoText = 0;
+
+        function myTimer() {
+            demoText++;
+            demoEl.textContent = "<b>" + demoText + "</b>";
+            demoEl.innerHTML = "<b>" + demoText + "</b>";
+        }
+
+
+
+        var myVar = setInterval(myTimer, 1000);
+    </script>
+</body>
+
+</html>

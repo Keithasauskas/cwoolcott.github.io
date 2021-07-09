@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var animals = ["dog", "cat", "cow", "fish", "frog"];
+        loopThroughThisArray(animals);
+
+        function multiplyFive(number) {
+            var newNumber = number * 500;
+            newNumber++;
+            return newNumber;
+        }
+
+        var num1 = multiplyFive(2);
+        var num2 = multiplyFive(7);
+        var num3 = multiplyFive(8);
+        var num4 = multiplyFive(3);
+        var num5 = multiplyFive(10);
+
+        console.log(num1, num2, num3, num4, num5);
+
+        // var num1 = 2 * 5;
+        // var num2 = 7 * 5;
+        // var num3 = 8 * 5;
+        // var num4 = 3 * 5;
+        // var num5 = 10 * 5;
+
+        // console.log(num1, num2, num3, num4, num5);
+
+
+
+        function greeting(firstName) {
+            var helloMessage = "Hi There, " + firstName;
+            return helloMessage;
+        }
+
+        console.log(greeting("Chris"));
+        console.log(greeting("Andrea"));
+
+
+        function showANumber() {
+            console.log("42");
+        }
+
+        showANumber();
+        showANumber();
+        showANumber();
+        showANumber();
+
+
+        function loopThroughThisArray(someArray) {
+            //Increment
+            for (var i = 0; i < someArray.length; i++) {
+                console.log(someArray[i]);
+            }
+        }
+
+
+        var classStudents = ["Kabao", "Alena", "Jose", "Shawn", "Sam", "David"];
+        loopThroughThisArray(classStudents);
+
+        function isThisTheSame(value1, value2) {
+
+            if (value1 === value2) {
+                return "Same Value, Same Type";
+            }
+            else if (value1 == value2) {
+                return "Same Value, Different Type";
+            }
+            else {
+                return "Not the Same";
+            }
+        }
+
+        var variable1 = isThisTheSame(1, 1); //"Same Value, Same Type"
+
+        console.log(isThisTheSame(1, 4));
+
+        console.log(variable1);
+        isThisTheSame(1, "1");
+        isThisTheSame(1, "cheese");
+
+
+        function add(num1, num2) {
+            console.log(num1 + num2);
+        }
+        // YAY!
+        console.log(addWithReturn(1, 4));
+
+        function addWithReturn(num1, num2) {
+            return num1 + num2;
+        }
+        // NO :(
+        //console.log(addExpression(1, 4));
+
+        var addExpression = function (num1, num2) {
+            return num1 + num2;
+        }
+
+
+
+        add(4, 6);
+
+        var myNumber = addWithReturn(4, 6);
+
+
+
+    </script>
+</body>
+
+</html>

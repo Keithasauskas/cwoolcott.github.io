@@ -136,13 +136,13 @@ select:hover, button:hover {
   margin-right: 2%;
 }
 
-/* What does this selector do? */
+/* Label is gray/italic when checked */
 .checkbox:checked + label {
   color: #999999;
   font-style: italic;
 }
 
-/* What does this selector do? */
+/* Add message when checked! */
 .checkbox:checked + label::after {
   margin-left: 10px;
   font-size: 90%;

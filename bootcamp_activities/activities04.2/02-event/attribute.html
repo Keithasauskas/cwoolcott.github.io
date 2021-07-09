@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div id="name1" class="someDiv" stuff="HEY" data-pizza="with sausage" data-name="Chris" data-number="1">SOME NAME
+    </div>
+    <div id="name2" class="someDiv" data-name="Bob" data-number="2">SOME 2</div>
+    <div id="name3" class="someDiv" data-name="Alena" data-number="3">SOME 3</div>
+
+
+    <script>
+        var dataArray = ["name", "number", "pizza"];
+        // ✔️ getAttribute()  ✔️ dataset  ✔️ setAttribute()
+        var someNameEl = document.querySelector("#name1");
+
+        // //Getters
+        console.log(someNameEl.getAttribute("name")); //Chris
+        console.log(someNameEl.dataset.name); //Chris
+
+        //Setters
+        someNameEl.setAttribute("data-name", "Bob");
+        someNameEl.setAttribute("class", "someclass class2")
+        someNameEl.setAttribute("style", "font-size:20px;color:blue")
+        someNameEl.dataset.name = "Bob"
+
+
+        for (i = 0; i < dataArray.length; i++) {
+            console.log(someNameEl.dataset[dataArray[i]]);
+        }
+
+    </script>
+</body>
+
+</html>

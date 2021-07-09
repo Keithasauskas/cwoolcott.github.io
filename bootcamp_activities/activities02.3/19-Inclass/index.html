@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        form {
+            font-size: 16px;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            border: 1px solid black;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        label {
+            display: block;
+        }
+
+        .text-input:focus {
+            border: 5px solid black;
+            background-color: yellow;
+        }
+
+        .text-input:placeholder-shown {
+            border-style: dotted;
+        }
+
+        .checkbox-input:checked+label {
+            color: #999999;
+            font-style: italic;
+        }
+
+        .checkbox-input:checked+label::after {
+            margin-left: 10px;
+            content: "*THANKS!";
+        }
+    </style>
+</head>
+
+<body>
+    <form action="senddata.html">
+        <p>
+            <label for="favColor">Favorite Color</label>
+            <select id="favColor">
+                <option value="">Choose...</option>
+                <option value="red">RED</option>
+                <option value="green">GREEN</option>
+                <option value="blue">BLUE</option>
+            </select>
+        </p>
+        <p>
+            <label for="firstName">What's Your First Name?</label>
+            <input type="text" class="text-input" id="firstName" placeholder="First Name" />
+        </p>
+        <p>
+            <label for="email">What's Your Email Address?</label>
+            <input type="text" class="text-input" id="email" placeholder="email@domain.com" />
+        </p>
+        <p>
+            <input class="checkbox-input" type="checkbox" id="signUp">
+            <label for="signUp">Sign Up For Newsletter? </label>
+
+        </p>
+        <p>
+            <label for="hungry">Are You Hungry For Apples?</label>
+            <input type="radio" name="hungry">Yes
+            <input type="radio" name="hungry">No
+        </p>
+        <p>
+            <button>SEND</button>
+        </p>
+    </form>
+</body>
+
+</html>
