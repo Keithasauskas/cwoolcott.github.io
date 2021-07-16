@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css" />
+    <!-- jQuery UI <link> tag -->
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
+
+    <title>jQuery UI Widgets - Inclass</title>
+</head>
+
+<body>
+    <br>
+    <input type="text" id="grocery-item"><br>
+    <input type="text" id="datepicker" autocomplete="off">
+    <br>
+
+</body>
+
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
+    var grocery = [
+        "milk",
+        "cheese",
+        "honey"
+    ];
+
+    var obj = { source: grocery };
+    $("#grocery-item").autocomplete(obj);
+
+
+    $('#grocery-list').sortable({
+        placeholder: 'ui-state-highlight',
+    });
+    $('#grocery-list').disableSelection();
+
+
+    $("#datepicker").datepicker({
+        changeMonth: true,
+        changeYear: true
+    }
+    );
+
+
+
+</script>
+
+</html>

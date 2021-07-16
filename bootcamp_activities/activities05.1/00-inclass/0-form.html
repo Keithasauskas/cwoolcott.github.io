@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form DEMO</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <h1></h1>
+    <form id="newsLetterSignup">
+        <p>
+            <label for="firstName">First Name</label>
+            <input type="text" name="firstName">
+        </p>
+        <p>
+            <label for="lastName">Last Name</label>
+            <input type="text" name="lastName" required>
+        </p>
+        <p>
+            <label for="emailAddress">Email Address</label>
+            <input type="email" name="emailAddress" id="emailAddress">
+        </p>
+        <p>
+            <label for="phone">Phone</label>
+            <input type="tel" name="phone">
+        </p>
+        <p>
+            <label for="optIn">Signup for Newsletter?</label>
+            <input type="checkbox" name="optIn">
+        </p>
+        <p>
+            <label for="optIn">Are You HAPPY?</label><br>
+            <input type="radio" value="yes" name="happy">YES<br>
+            <input type="radio" value="no" name="happy">NO<br>
+            <input type="radio" value="maybe" name="happy">MAYBE?<br>
+        </p>
+        <p>
+            <label for="optIn">Select a Mode of Transportation</label><br>
+            <select name="transportation" required>
+                <option value="">Please Choose...</option>
+                <option value="bike">BIKE/CYCLE</option>
+                <option value="car">CAR/VAN/BUS</option>
+                <option value="motorcycle">MotorCycle</option>
+            </select>
+        </p>
+        <p>
+            <button>SIGNUP</button>
+        </p>
+    </form>
+    <script>
+        function handleFormSubmit(event) {
+            event.preventDefault();
+            var firstName = $('input[name="firstName"]').val();
+            var lastName = $('input[name="lastName"]').val();
+            var email = $('input[name="emailAddress"]').val();
+            var phone = $('input[name="phone"]').val();
+            var optIn = $('input[name="optIn"]').prop('checked');
+
+            if (!firstName) {
+                alert("MUST HAVE FIRST NAME");
+                return;
+            }
+
+            if (optIn) {
+                alert("YOU OPTED IN!");
+            }
+            else {
+                alert("YOU DID NOT OPT IN!");
+            }
+
+            $("h1").text("THANKS! " + firstName + " " + lastName)
+            $("#newsLetterSignup").hide();
+        }
+
+        // $('input[name="emailAddress"]').val('test@test.com');
+        $('input[name="optIn"]').prop('checked', true); //unchecks
+
+        $("#newsLetterSignup").on('submit', handleFormSubmit);
+
+        // $("#newsLetterSignup").on('submit', function () {
+        //     handleFormSubmit();
+        // });
+    </script>
+</body>
+
+</html>
