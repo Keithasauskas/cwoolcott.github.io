@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fetch</title>
+</head>
+
+<body>
+    <div id="movieInfo">
+
+    </div>
+
+    <script>
+        var url = "https://www.omdbapi.com/?i=tt0081353&apikey=9fa6058b";
+        var movieInfo = document.querySelector("#movieInfo");
+        var omdb_data = [];
+
+        fetch(url)
+            .then(function (omdb_response) {
+                //console.log(omdb_response)
+                return omdb_response.json()
+            })
+            .then(function (omdb_data) {
+                //   console.log("SECOND");
+                //console.log(omdb_data)
+                console.log(omdb_data)
+                var titleEl = document.createElement("h1");
+                titleEl.textContent = omdb_data.Title;
+                movieInfo.append(titleEl);
+
+                var moviePoster = document.createElement("img");
+                moviePoster.src = omdb_data.Poster;
+                movieInfo.append(moviePoster);
+
+            });
+
+
+        // console.log("FIRST");
+        // console.log(omdb_data);
+
+        // console.log("fetch");
+        // console.log("then");
+        // console.log("then");
+
+
+    </script>
+</body>
+
+</html>

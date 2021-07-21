@@ -4,8 +4,24 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Fetch Demo</title>
+  <title>Dynamically Generate Elements</title>
   <link rel="stylesheet" href="./assets/css/style.css" />
+  <style>
+    #users img,
+    #users h2,
+    #users a {
+      margin: 0 auto;
+    }
+
+    img {
+      border-radius: 100%
+    }
+
+    hr {
+      width: 101px;
+      margin-bottom: 50px;
+    }
+  </style>
 </head>
 
 <body class="min-100-vh flex-column">
@@ -16,23 +32,25 @@
     <section class="card card-rounded col-7 bg-white">
       <header class="card-header text-center">
         <h2 class="text-white">
-          Fetch Demo
+          Dynamically Generated Elements
         </h2>
       </header>
-      <div class="text-center pt-4">
+      <div class="text-center p-4">
+        <p class="card-body">
+          Generate dynamic HTML to display the GitHub users' login and URL of
+          their GitHub profile.
+        </p>
         <button class="btn btn-danger" id="fetch-button">
           Click Me
         </button>
       </div>
-      <table class="card-body table mx-auto my-4">
-        <th>
-          <p class="my-4">Results</p>
-        </th>
-        <tbody id="repo-table" class="mx-auto text-center"></tbody>
-      </table>
+      <div class="flex-column" id="users"></div>
+      <button class="btn btn-danger" style="display: none" id="loadmore-button">
+        Load More
+      </button>
     </section>
-    <script src="./assets/js/script.js"></script>
   </main>
+  <script src="./assets/js/script.js"></script>
 </body>
 
 </html>
