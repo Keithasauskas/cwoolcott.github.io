@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <!-- Other CSS is loaded before ours, so our styles arent overridden -->
+  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css" />
+  <title>Git it Done</title>
+</head>
+
+<body class="flex-column min-100-vh">
+  <header class="hero">
+    <h1 class="app-title">
+      <!-- Font Awesome Github Icon -->
+      <i class="fab fa-github"></i> Git it Done!
+    </h1>
+    <p>Search for a <i>GitHub</i> user or click on a language to see a list of repositories and how many open issues
+      they have!
+    </p>
+  </header>
+
+
+  <main class="flex-row justify-space-between">
+    <div class="col-12 col-md-4">
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By User</h3>
+        <form id="user-form" class="card-body">
+          <label class="form-label" for="username">Username</label>
+          <input name="username" id="username" type="text" autofocus="true" class="form-input" />
+          <button type="submit" class="btn">Get User</button>
+        </form>
+      </div>
+
+      <div class="card">
+        <h3 class="card-header text-uppercase">Search By Topic</h3>
+        <div id="language-buttons" class="card-body">
+          <!-- Used to search Repos the term is used when button is clicked -->
+          <button data-language="javascript" data-whatever="HI" class="btn">JavaScript Is Great!</button>
+          <button data-language="html" data-whatever="BYE" class="btn">HTML is Fun!</button>
+          <button data-language="css" data-whatever="OKAY!" class="btn">CSS is Whatever</button>
+          <button class="btn">React</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-12 col-md-8">
+      <h2 class="subtitle">Showing Repositories for: <span id="repo-search-term"></span></h2>
+      <!-- Data we are collecting from the API - REPOS! Placeholder! -->
+      <div id="repos-container" class="list-group">REPOS GO HERE!</div>
+    </div>
+  </main>
+
+  <script src="./assets/js/homepage.js"></script>
+</body>
+
+</html>
