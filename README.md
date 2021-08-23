@@ -21,7 +21,6 @@ The course is broken down into three phases, with a group project at the end of 
 The first third of the course focuses on the front end&mdash;the words, images, and forms you see and interact with in the browser&mdash;like when you click a login button and a dialog box pops up. Front-end languages, techniques, and libraries are foundational to being a full-stack developer, and you’ll continue to build on these skills throughout the course.
 
 ## Project 1
-
 This boot camp will be taxing, and having something you can look back on and be proud of early in the course helps keep motivation and morale high. You might not believe it now, but it’s totally possible to build a cool interactive web application after the first few weeks by developing the front-end yourself and leveraging other people’s servers and APIs. For example, Food Finder is a student-made app that helps you find recipes. Fourth and Lawn is another student-made app that helps you find parking at sporting events.
 
 ## What to Expect in Phase 2 
