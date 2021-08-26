@@ -10,9 +10,14 @@ const middleware = (req, res, next) => {
   // Log out the request type and resource
   console.log(yellow, `${req.method} request to ${req.path}`);
 
-  // Built-in express method to call the next middleware in the stack.
+  if (req.method != "GET") {
+    console.log("OPPS!");
+    throw "NO ACCESS";
+  }
+
   next();
 };
+
 
 app.use(middleware);
 
