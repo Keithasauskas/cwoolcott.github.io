@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob's Cars</title>
+</head>
+
+<body>
+    <h1>BOB'S CARS</h1>
+
+    <ul id="carsList"></ul>
+
+    <script>
+
+        const buildCarsEl = document.getElementById('carsList');
+
+        function buildCars(data) {
+            data.forEach((car) => {
+                let carItem = document.createElement('li');
+                carItem.innerHTML = car.model;
+                buildCarsEl.appendChild(carItem);
+            })
+        }
+
+        fetch('/api/cars')
+            .then(
+                function (response) {
+                    if (response.status !== 200) {
+                        console.log('Looks like there was a problem. Status Code: ' +
+                            response.status);
+                        return;
+                    }
+                    // Examine the text in the response
+                    response.json().then(function (data) {
+                        buildCars(data)
+                    });
+                }
+            )
+            .catch(function (err) {
+                console.log('Fetch Error :-S', err);
+            });
+
+    </script>
+
+</body>
+
+</html>
